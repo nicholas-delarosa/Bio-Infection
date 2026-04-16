@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fuente: 'Montserrat', sans-serif;
+    --fondo-nav-footer: #218618;
+    --texto-nav-footer: #FFFFFF;
+    --texto-hover-nav-footer: #5CB3FF;
+    --fondo-pr: #FFF3E4;
+    --texto-pr: #57341D;
+    --texto-hs: #1A5126;
+    --fondo-normas: #b18f64;
+    --fondo-normas-sombra: #57341D;
+    --texto-hs-normas: #FFD9A6;
+    --texto-normas: #FFF3E4;
+    --bordes: #152418;
+}
+
+body {
+    background: var(--fondo-pr);
+    font-family: var(--fuente);
+    color: var(--texto-pr);
+    font-size: 1.2rem;
+}
+
+header {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    border: 3px solid var(--bordes);
+    background-color: #00000080;
+}
+
+header span {
+    font-size: larger;
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--texto-hs);
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 80%;
+}
+
+.navbar {
+    background: var(--fondo-nav-footer);
+    color: var(--texto-nav-footer);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: 3px solid var(--bordes);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 3rem;
+}
+
+.navbar a {
+    color: var(--texto-nav-footer);
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--texto-hover-nav-footer);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    width: 100%;
+    text-align: center;
+    gap: 2rem;
+    color: var(--texto-nav-footer);
+}
+
+.hero p {
+    text-align: center;
+    width: 80%;
+    font-size: 1.5rem;
+}
+
+.sierra, .balneario {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 2rem 1rem 1rem 1rem;
+}
+
+.info-sierra, .info-balneario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    text-align: center;
+    gap: 3px;
+}
+
+.info-sierra h2, .info-balneario h2 {
+    width: 90%;
+}
+
+.info-sierra p, .info-balneario p {
+    width: 90%;
+    padding-bottom: 2rem;
+}
+
+.imgs-sierra, .imgs-balneario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.imgs-sierra img, .imgs-balneario img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid var(--bordes);
+    border-radius: 1rem;
+}
+
+#sierra-1, #balneario-1 {
+    grid-column: span 2;
+    width: 100%;
+    height: auto;
+}
+
+iframe {
+    border: 5px solid var(--bordes) !important;
+    border-radius: 1rem;
+    max-width: 100% !important;
+    width: 85% !important;
+    height: 300px !important;
+}
+
+.normas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3px;
+}
+
+#p-normas {
+    width: 70%;
+}
+
+.normas ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1rem;
+    list-style: none;
+    color: var(--texto-normas);
+}
+
+#flor-icon {
+    font-size: 3rem;
+}
+
+.normas ul i {
+    font-size: 2rem;
+}
+
+.normas ul h2 {
+    color: var(--texto-hs-normas);
+}
+
+.normas ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 1rem 1rem;
+    background: var(--fondo-normas);
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px var(--fondo-normas-sombra);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 95%;
+}
+
+.normas ul li:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background: var(--fondo-nav-footer);
+    color: var(--texto-nav-footer);
+    display: grid;
+    place-items: center;
+    padding: 1rem 2rem;
+    border: 3px solid var(--bordes);
+    text-align: center;
+}
+
+/* Diseño Responsive */
+@media (max-width: 920px) {
+    .navbar {
+        display: grid;
+        justify-items: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    .navbar ul {
+        justify-content: center;
+        padding: 0;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .hero {
+        padding: 2rem 1rem;
+    }
+    .hero p {
+        width: 95%;
+    }
+    header {
+        height: auto;
+        min-height: 60vh;
+        width: 100%;;
+    }
+    .sierra, .balneario {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .info-sierra, .info-balneario {
+        width: 100%;
+    }
+    .normas ul {
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .imgs-sierra, .imgs-balneario {
+        grid-template-columns: 1fr;
+    }
+    .imgs-sierra img, .imgs-balneario img {
+        height: auto;
+    }
+    #sierra-1, #balneario-1 {
+        grid-column: span 1;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 920px) {
+    .navbar ul{
+        place-self: end;
+    }
+}

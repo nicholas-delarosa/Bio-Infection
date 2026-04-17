@@ -320,9 +320,3 @@ footer {
         grid-column: span 1;
     }
 }
-
-@media (min-width: 500px) and (max-width: 920px) {
-    .navbar ul{
-        place-self: end;
-    }
-}
